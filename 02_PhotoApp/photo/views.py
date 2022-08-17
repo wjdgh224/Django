@@ -3,7 +3,7 @@ from .models import Photo
 from .forms import PhotoForm
 
 # Create your views here.
-# 데이터(model)를 가져와서 render를 이용해 화면(template)과 연결시키긴다.
+# 데이터(model)를 가져와서 render를 이용해 화면(template)에 적용시키긴다.
 def photo_list(request):
     photos = Photo.objects.all() # models 데이터에서 모든 Photo 불러오기
     return render(request, 'photo/photo_list.html', {'photos':photos}) # html 화면 출력 및 데이터 전달
