@@ -15,6 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from pybo.views import base_views
 
 #from pybo import views
 
@@ -23,4 +24,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     #path('pybo/', views.index), 
     path('pybo/', include('pybo.urls')), # pybo와 관련된 처리를 하는 urls따로 만듦. config에 특정 앱에 대한 매핑을 일일이 하지 않고 한번에 처리
+    path('common/', include('common.urls')),
+    path('', base_views.index, name='index'),
 ]
